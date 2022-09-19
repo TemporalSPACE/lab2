@@ -1,7 +1,9 @@
 class Victim < ApplicationRecord
     validates :name, presence: true
 
-    belongs_to :attacks, dependent: :destroy
+    has_many:attacks, dependent: :destroy
+
+    #has_many:monster, through:attacks
 end
 #idk=Monster.find(3).attacks.pluck :victim_id
 #Victim.where(id: idk)
